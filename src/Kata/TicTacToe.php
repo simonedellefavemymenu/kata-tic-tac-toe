@@ -8,6 +8,8 @@ class TicTacToe
     const PLAYER_2_NAME = 'O';
     private $players = [];
     private $lastMovingPlayer = null;
+    private $activeGame = true;
+    private $winner = null;
 
     private $grid = [
         1 => '', 2 => '', 3 => '',
@@ -25,12 +27,21 @@ class TicTacToe
         ];
     }
 
-    public function takeField(Player $player, int $field): void
+    public function takeField(Player $player, int $field): ?bool
     {
         $this->isValidMove($player, $field);
 
         $this->grid[$field] = $player->name();
         $this->lastMovingPlayer = $player;
+
+        if (
+            $this->aRowIsTaken() || $this->aColumnIsTaken() || $this->aDiagonalIsTaken() || $this->fullGrid()
+        ) {
+            $this->activeGame = false;
+            return true;
+        }
+
+        return null;
     }
 
     public function grid(): array
@@ -47,6 +58,9 @@ class TicTacToe
      */
     public function isValidMove(Player $player, int $field): void
     {
+        if (!$this->activeGame)
+            throw new GameEndedException();
+
         if (!in_array($player, $this->players))
             throw new NotExistingPlayerException();
 
@@ -55,6 +69,58 @@ class TicTacToe
 
         if ($field < 1 || $field > 9)
             throw new NotExistingFieldException();
+
+        if (!empty($this->grid[$field]))
+            throw new FieldOccupiedException();
+    }
+
+    /**
+     * @return bool
+     */
+    public function aRowIsTaken(): bool
+    {
+        return (!empty($this->grid[1]) && $this->grid[1] === $this->grid[2] && $this->grid[1] === $this->grid[3]) ||
+            (!empty($this->grid[4]) && $this->grid[4] === $this->grid[5] && $this->grid[4] === $this->grid[6]) ||
+            (!empty($this->grid[7]) && $this->grid[7] === $this->grid[8] && $this->grid[7] === $this->grid[9]);
+    }
+
+    /**
+     * @return bool
+     */
+    public function aColumnIsTaken(): bool
+    {
+        return (!empty($this->grid[1]) && $this->grid[1] === $this->grid[4] && $this->grid[1] === $this->grid[7]) ||
+            (!empty($this->grid[2]) && $this->grid[2] === $this->grid[5] && $this->grid[2] === $this->grid[8]) ||
+            (!empty($this->grid[3]) && $this->grid[3] === $this->grid[6] && $this->grid[3] === $this->grid[9]);
+    }
+
+    private function aDiagonalIsTaken()
+    {
+        if (
+            (!empty($this->grid[1]) && $this->grid[1] === $this->grid[5] && $this->grid[1] === $this->grid[9])
+        ) {
+            $this->winner = $this->grid[1];
+            return true;
+        }
+        if (
+            (!empty($this->grid[3]) && $this->grid[3] === $this->grid[5] && $this->grid[3] === $this->grid[7])
+        ) {
+            $this->winner = $this->grid[3];
+            return true;
+        }
+    }
+
+    private function fullGrid()
+    {
+        return (
+            !empty($this->grid[1]) && !empty($this->grid[2]) && !empty($this->grid[3]) &&
+            !empty($this->grid[4]) && !empty($this->grid[5]) && !empty($this->grid[6]) &&
+            !empty($this->grid[7]) && !empty($this->grid[8]) && !empty($this->grid[9])
+        );
+    }
+
+    public function winner(): ?string
+    {
+        return $this->winner;
     }
 }
-
