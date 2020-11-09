@@ -2,7 +2,7 @@
 
 namespace Kata;
 
-class Index
+class TicTacToe
 {
     public function handle(): bool
     {

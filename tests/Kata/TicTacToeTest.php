@@ -3,13 +3,15 @@
 namespace Kata;
 
 use PHPUnit\Framework\TestCase;
-use Kata\Index;
+use Kata\TicTacToe;
 
-class IndexTest extends TestCase
+class TicTacToeTest extends TestCase
 {
+    private $ticTacToe;
+
     protected function setUp(): void
     {
-        $this->index = new Index();
+        $this->ticTacToe = new TicTacToe();
     }
 
     public function testShallPass(): void
@@ -19,6 +21,6 @@ class IndexTest extends TestCase
 
     public function testHandleReturnTrue(): void
     {
-        $this->assertEquals(true, $this->index->handle());
+        $this->assertEquals(true, $this->ticTacToe->handle());
     }
 }
