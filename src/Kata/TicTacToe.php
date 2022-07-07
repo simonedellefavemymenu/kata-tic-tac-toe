@@ -4,7 +4,9 @@ namespace Kata;
 
 class TicTacToe
 {
-    public function playerTakeFirstField(string $player, int $round): ?string
+    protected int $round;
+
+    public function playerTakeField(string $player, int $round): ?string
     {
         $field = null;
 
@@ -22,6 +24,10 @@ class TicTacToe
 
         if ($player === 'y' && $round === 2) {
             $field = '1x4';
+        }
+
+        if ($player === 'x' && $round === 3) {
+            $field = '2x1';
         }
 
         return $field;

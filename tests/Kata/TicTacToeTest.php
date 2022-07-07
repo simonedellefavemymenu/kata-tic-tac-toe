@@ -20,18 +20,22 @@ class TicTacToeTest extends TestCase
     }
 
     public function testPlayerXTakeFirstField(): void{
-        $this->assertEquals('1x1', $this->ticTacToe->playerTakeFirstField('x', 1));
+        $this->assertEquals('1x1', $this->ticTacToe->playerTakeField('x', 1));
     }
 
     public function testPlayerYTakeFirstField(): void{
-        $this->assertEquals('1x2', $this->ticTacToe->playerTakeFirstField('y', 1));
+        $this->assertEquals('1x2', $this->ticTacToe->playerTakeField('y', 1));
     }
 
     public function testPlayerXTakeSecondField(): void{
-        $this->assertEquals('1x3', $this->ticTacToe->playerTakeFirstField('x', 2));
+        $this->assertEquals('1x3', $this->ticTacToe->playerTakeField('x', 2));
     }
 
     public function testPlayerYTakeSecondField(): void{
-        $this->assertEquals('1x4', $this->ticTacToe->playerTakeFirstField('y', 2));
+        $this->assertEquals('1x4', $this->ticTacToe->playerTakeField('y', 2));
+    }
+
+    public function testPlayerXTakeThirdField(): void{
+        $this->assertEquals('2x1', $this->ticTacToe->playerTakeField('x', 3));
     }
 }
