@@ -4,44 +4,42 @@ namespace Kata;
 
 class TicTacToe
 {
-    protected int $round;
-
-    public function playerTakeField(string $player, int $round): ?string
+    public function playerTakeField(string $player, int $round, string $position): string
     {
-        $field = null;
+        $fieldClass = new Field($position);
 
         if ($player === 'x' && $round === 1) {
-            $field = '1x1';
-        }
-
-        if ($player === 'y' && $round === 1) {
-            $field = '1x2';
+            $field = $fieldClass->getPosition();
         }
 
         if ($player === 'x' && $round === 2) {
-            $field = '1x3';
-        }
-
-        if ($player === 'y' && $round === 2) {
-            $field = '1x4';
+            $field = $fieldClass->getPosition();
         }
 
         if ($player === 'x' && $round === 3) {
-            $field = '2x1';
-        }
-
-        if ($player === 'y' && $round === 3) {
-            $field = '2x2';
+            $field = $fieldClass->getPosition();
         }
 
         if ($player === 'x' && $round === 9) {
-            $field = '3x2';
+            $field = $fieldClass->getPosition();
+        }
+
+        if ($player === 'y' && $round === 1) {
+            $field = $fieldClass->getPosition();
+        }
+
+        if ($player === 'y' && $round === 2) {
+            $field = $fieldClass->getPosition();
+        }
+
+        if ($player === 'y' && $round === 3) {
+            $field = $fieldClass->getPosition();
         }
 
         if ($player === 'y' && $round === 9) {
-            $field = '3x3';
+            $field = $fieldClass->getPosition();
         }
 
-        return $field;
+        return $position;
     }
 }
