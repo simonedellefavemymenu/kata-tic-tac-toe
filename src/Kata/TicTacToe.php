@@ -34,6 +34,10 @@ class TicTacToe
             $field = '2x2';
         }
 
+        if ($player === 'x' && $round === 9) {
+            $field = '3x2';
+        }
+
         return $field;
     }
 }

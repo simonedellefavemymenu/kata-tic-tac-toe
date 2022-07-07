@@ -42,4 +42,8 @@ class TicTacToeTest extends TestCase
     public function testPlayerYTakeThirdField(): void{
         $this->assertEquals('2x2', $this->ticTacToe->playerTakeField('y', 3));
     }
+
+    public function testPlayerXTakeLastField(): void{
+        $this->assertEquals('3x2', $this->ticTacToe->playerTakeField('x', 9));
+    }
 }
