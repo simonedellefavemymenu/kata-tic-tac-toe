@@ -21,6 +21,11 @@ class TicTacToeTest extends TestCase
 
     public function testHandleReturnX(): void
     {
-        $this->assertEquals('x', $this->ticTacToe->handle());
+        $this->assertEquals('x', $this->ticTacToe->handle('x'));
+    }
+
+    public function testHandleReturnY(): void
+    {
+        $this->assertEquals('o', $this->ticTacToe->handle('o'));
     }
 }
