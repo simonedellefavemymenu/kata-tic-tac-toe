@@ -19,8 +19,8 @@ class TicTacToeTest extends TestCase
         $this->assertEquals(1, 1);
     }
 
-    public function testHandleReturnTrue(): void
+    public function testHandleReturnX(): void
     {
-        $this->assertEquals(true, $this->ticTacToe->handle());
+        $this->assertEquals('x', $this->ticTacToe->handle());
     }
 }

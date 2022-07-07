@@ -4,8 +4,8 @@ namespace Kata;
 
 class TicTacToe
 {
-    public function handle(): bool
+    public function handle(): string
     {
-        return true;
+        return 'X';
     }
 }
