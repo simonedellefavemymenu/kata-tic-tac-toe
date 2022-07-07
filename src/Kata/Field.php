@@ -4,15 +4,17 @@ namespace Kata;
 
 class Field
 {
-    protected string $position;
+    protected int $abscissa;
+    protected int $ordered;
 
-    public function __construct(string $position)
+    public function __construct(int $abscissa, int $ordered)
     {
-        $this->position = $position;
+        $this->abscissa = $abscissa;
+        $this->ordered = $ordered;
     }
 
     public function getPosition(): string
     {
-        return $this->position;
+        return $this->abscissa . 'x' . $this->ordered;
     }
 }
