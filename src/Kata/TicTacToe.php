@@ -4,8 +4,8 @@ namespace Kata;
 
 class TicTacToe
 {
-    public function handle(string $player): string
+    public function playerTakeFirstField(string $player): string
     {
-        return $player;
+        return '1x1';
     }
 }
