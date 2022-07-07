@@ -20,41 +20,49 @@ class TicTacToeTest extends TestCase
 
     public function testPlayerXTakeFirstField(): void
     {
-        $this->assertEquals('1x1', $this->ticTacToe->playerTakeField('x', 1, '1x1'));
+        $field = new Field('1x1');
+        $this->assertEquals('1x1', $this->ticTacToe->playerTakeField('x', 1, $field));
     }
 
     public function testPlayerYTakeFirstField(): void
     {
-        $this->assertEquals('1x2', $this->ticTacToe->playerTakeField('y', 1, '1x2'));
+        $field = new Field('1x2');
+        $this->assertEquals('1x2', $this->ticTacToe->playerTakeField('y', 1, $field));
     }
 
     public function testPlayerXTakeSecondField(): void
     {
-        $this->assertEquals('1x3', $this->ticTacToe->playerTakeField('x', 2, '1x3'));
+        $field = new Field('1x3');
+        $this->assertEquals('1x3', $this->ticTacToe->playerTakeField('x', 2, $field));
     }
 
     public function testPlayerYTakeSecondField(): void
     {
-        $this->assertEquals('2x3', $this->ticTacToe->playerTakeField('y', 2, '2x3'));
+        $field = new Field('2x3');
+        $this->assertEquals('2x3', $this->ticTacToe->playerTakeField('y', 2, $field));
     }
 
     public function testPlayerXTakeThirdField(): void
     {
-        $this->assertEquals('2x1', $this->ticTacToe->playerTakeField('x', 3, '2x1'));
+        $field = new Field('2x1');
+        $this->assertEquals('2x1', $this->ticTacToe->playerTakeField('x', 3, $field));
     }
 
     public function testPlayerYTakeThirdField(): void
     {
-        $this->assertEquals('2x2', $this->ticTacToe->playerTakeField('y', 3, '2x2'));
+        $field = new Field('2x2');
+        $this->assertEquals('2x2', $this->ticTacToe->playerTakeField('y', 3, $field));
     }
 
     public function testPlayerXTakeLastField(): void
     {
-        $this->assertEquals('3x2', $this->ticTacToe->playerTakeField('x', 9, '3x2'));
+        $field = new Field('3x2');
+        $this->assertEquals('3x2', $this->ticTacToe->playerTakeField('x', 9, $field));
     }
 
     public function testPlayerYTakeLastField(): void
     {
-        $this->assertEquals('3x3', $this->ticTacToe->playerTakeField('y', 9, '3x3'));
+        $field = new Field('3x3');
+        $this->assertEquals('3x3', $this->ticTacToe->playerTakeField('y', 9, $field));
     }
 }
