@@ -4,8 +4,14 @@ namespace Kata;
 
 class TicTacToe
 {
-    public function handle(): bool
+    public function handle(): array
     {
-        return true;
+        $field = [
+            0 => [], [], [],
+            1 => [], [], [],
+            2 => [], [], []
+        ];
+
+        return $field;
     }
 }

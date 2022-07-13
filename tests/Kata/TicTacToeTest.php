@@ -15,6 +15,12 @@ class TicTacToeTest extends TestCase
 
     public function testHandle(): void
     {
-        $this->assertTrue($this->ticTacToe->handle());
+        $field = [
+            0 => [], [], [],
+            1 => [], [], [],
+            2 => [], [], []
+        ];
+
+        $this->assertEquals($field, $this->ticTacToe->handle());
     }
 }
