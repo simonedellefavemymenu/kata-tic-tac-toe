@@ -4,10 +4,10 @@ namespace Kata;
 
 class TicTacToe
 {
-    public function handle(): array
+    public function playerTakeMove(string $player): array
     {
         $field = [
-            0 => [], [], [],
+            0 => [$player], [], [],
             1 => [], [], [],
             2 => [], [], []
         ];

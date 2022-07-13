@@ -13,14 +13,16 @@ class TicTacToeTest extends TestCase
         $this->ticTacToe = new TicTacToe();
     }
 
-    public function testHandle(): void
+    public function testFirstPlayerTakeFirstMove(): void
     {
         $field = [
-            0 => [], [], [],
+            0 => ['x'], [], [],
             1 => [], [], [],
             2 => [], [], []
         ];
 
-        $this->assertEquals($field, $this->ticTacToe->handle());
+        $player = 'x';
+
+        $this->assertEquals($field, $this->ticTacToe->playerTakeMove($player));
     }
 }
