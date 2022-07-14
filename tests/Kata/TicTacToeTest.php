@@ -27,7 +27,7 @@ class TicTacToeTest extends TestCase
             2 => ['', '', '']
         ];
 
-        $player = 'x';
+        $player = new Player('x');
         $round = 1;
 
         $this->assertEquals($expectedField, $this->ticTacToe->playerTakeMove($player, $actualField, $round));
@@ -47,7 +47,7 @@ class TicTacToeTest extends TestCase
             2 => ['', '', '']
         ];
 
-        $player = 'o';
+        $player = new Player('o');
         $round = 1;
 
         $this->assertEquals($expectedField, $this->ticTacToe->playerTakeMove($player, $actualField, $round));
@@ -67,7 +67,7 @@ class TicTacToeTest extends TestCase
             2 => ['', '', '']
         ];
 
-        $player = 'x';
+        $player = new Player('x');
         $round = 2;
 
         $this->assertEquals($expectedField, $this->ticTacToe->playerTakeMove($player, $actualField, $round));
@@ -87,7 +87,7 @@ class TicTacToeTest extends TestCase
             2 => ['', '', '']
         ];
 
-        $player = 'o';
+        $player = new Player('o');
         $round = 2;
 
         $this->assertEquals($expectedField, $this->ticTacToe->playerTakeMove($player, $actualField, $round));

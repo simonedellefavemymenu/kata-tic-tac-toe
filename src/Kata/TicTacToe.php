@@ -4,9 +4,9 @@ namespace Kata;
 
 class TicTacToe
 {
-    public function playerTakeMove(string $player, array $field, int $round): array
+    public function playerTakeMove(Player $player, array $field, int $round): array
     {
-        if ($player === 'x') {
+        if ($player->getIcon() === 'x') {
             if ($round === 1) {
                 $field[0][0] = 'x';
             }
