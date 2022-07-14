@@ -22,6 +22,10 @@ class TicTacToe
             $field[0][1] = 'o';
         }
 
+        if ($round === 2) {
+            $field[1][0] = 'o';
+        }
+
         return $field;
     }
 }

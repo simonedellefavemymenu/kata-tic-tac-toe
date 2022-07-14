@@ -72,4 +72,24 @@ class TicTacToeTest extends TestCase
 
         $this->assertEquals($expectedField, $this->ticTacToe->playerTakeMove($player, $actualField, $round));
     }
+
+    public function testSecondPlayerTakeSecondMove(): void
+    {
+        $actualField = [
+            0 => ['x', 'o', 'x'],
+            1 => ['', '', ''],
+            2 => ['', '', '']
+        ];
+
+        $expectedField = [
+            0 => ['x', 'o', 'x'],
+            1 => ['o', '', ''],
+            2 => ['', '', '']
+        ];
+
+        $player = 'o';
+        $round = 2;
+
+        $this->assertEquals($expectedField, $this->ticTacToe->playerTakeMove($player, $actualField, $round));
+    }
 }
