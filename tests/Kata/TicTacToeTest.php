@@ -2,6 +2,7 @@
 
 namespace Kata;
 
+use Exception;
 use PHPUnit\Framework\TestCase;
 
 class TicTacToeTest extends TestCase
@@ -146,25 +147,25 @@ class TicTacToeTest extends TestCase
 
     public function testPIconIsNotAllowed(): void
     {
-        $this->expectException(\Exception::class);
+        $this->expectException(Exception::class);
         $icon = new Icon('p');
     }
 
     public function testAIconIsNotAllowed(): void
     {
-        $this->expectException(\Exception::class);
+        $this->expectException(Exception::class);
         $icon = new Icon('a');
     }
 
     public function test1NumberIconIsNotAllowed(): void
     {
-        $this->expectException(\Exception::class);
+        $this->expectException(Exception::class);
         $icon = new Icon('1');
     }
 
     public function testSpecialCharacterIconIsNotAllowed(): void
     {
-        $this->expectException(\Exception::class);
+        $this->expectException(Exception::class);
         $icon = new Icon('£');
     }
 }
