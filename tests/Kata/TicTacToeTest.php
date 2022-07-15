@@ -15,37 +15,37 @@ class TicTacToeTest extends TestCase
 
     public function testFirstPlayerTakeFirstMove(): void
     {
-        $actualField = [
+        $expectedField = new Field([
             0 => ['', '', ''],
             1 => ['', '', ''],
             2 => ['', '', '']
-        ];
+        ]);
 
-        $expectedField = [
+        $actualField = new Field([
             0 => ['x', '', ''],
             1 => ['', '', ''],
             2 => ['', '', '']
-        ];
+        ]);
 
         $player = new Player('x');
         $round = 1;
 
-        $this->assertEquals($expectedField, $this->ticTacToe->playerTakeMove($player, $actualField, $round));
+        $this->assertEquals($actualField, $this->ticTacToe->playerTakeMove($player, $expectedField, $round));
     }
 
     public function testSecondPlayerTakeFirstMove(): void
     {
-        $actualField = [
+        $actualField = new Field([
             0 => ['x', '', ''],
             1 => ['', '', ''],
             2 => ['', '', '']
-        ];
+        ]);
 
-        $expectedField = [
+        $expectedField = new Field([
             0 => ['x', 'o', ''],
             1 => ['', '', ''],
             2 => ['', '', '']
-        ];
+        ]);
 
         $player = new Player('o');
         $round = 1;
@@ -55,17 +55,17 @@ class TicTacToeTest extends TestCase
 
     public function testFirstPlayerTakeSecondMove(): void
     {
-        $actualField = [
+        $actualField = new Field([
             0 => ['x', 'o', ''],
             1 => ['', '', ''],
             2 => ['', '', '']
-        ];
+        ]);
 
-        $expectedField = [
+        $expectedField = new Field([
             0 => ['x', 'o', 'x'],
             1 => ['', '', ''],
             2 => ['', '', '']
-        ];
+        ]);
 
         $player = new Player('x');
         $round = 2;
@@ -75,17 +75,17 @@ class TicTacToeTest extends TestCase
 
     public function testSecondPlayerTakeSecondMove(): void
     {
-        $actualField = [
+        $actualField = new Field([
             0 => ['x', 'o', 'x'],
             1 => ['', '', ''],
             2 => ['', '', '']
-        ];
+        ]);
 
-        $expectedField = [
+        $expectedField = new Field([
             0 => ['x', 'o', 'x'],
             1 => ['o', '', ''],
             2 => ['', '', '']
-        ];
+        ]);
 
         $player = new Player('o');
         $round = 2;

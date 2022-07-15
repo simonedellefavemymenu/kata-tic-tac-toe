@@ -4,26 +4,26 @@ namespace Kata;
 
 class TicTacToe
 {
-    public function playerTakeMove(Player $player, array $field, int $round): array
+    public function playerTakeMove(Player $player, Field $field, Round $round): Field
     {
         if ($player->getIcon() === 'x') {
-            if ($round === 1) {
-                $field[0][0] = 'x';
+            if ($round->getRound() === 1) {
+                $field->putIconIntoField('x', 0, 0);
             }
 
-            if ($round === 2) {
-                $field[0][2] = 'x';
+            if ($round->getRound() === 2) {
+                $field->putIconIntoField('x', 0, 2);
             }
 
             return $field;
         }
 
-        if ($round === 1) {
-            $field[0][1] = 'o';
+        if ($round->getRound() === 1) {
+            $field->putIconIntoField('o', 0, 1);
         }
 
-        if ($round === 2) {
-            $field[1][0] = 'o';
+        if ($round->getRound() === 2) {
+            $field->putIconIntoField('o', 1, 0);
         }
 
         return $field;
