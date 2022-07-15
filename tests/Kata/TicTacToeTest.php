@@ -143,4 +143,10 @@ class TicTacToeTest extends TestCase
         $this->expectException(PositionAlreadyTakenException::class);
         $ticTacToe->playerTakeMove($player, $coordinates);
     }
+
+    public function testPIconIsNotAllowed(): void
+    {
+        $this->expectException(\Exception::class);
+        $icon = new Icon('p');
+    }
 }
