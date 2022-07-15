@@ -2,6 +2,7 @@
 
 namespace Kata;
 
+use Exception;
 use PHPUnit\Framework\TestCase;
 
 class TicTacToeTest extends TestCase
@@ -17,20 +18,20 @@ class TicTacToeTest extends TestCase
     {
         $player = new Player('x');
         $coordinates = new Coordinates(0, 0);
-
-        $expectedField = new Field([
+        $startField = new Field([
             0 => ['', '', ''],
             1 => ['', '', ''],
             2 => ['', '', '']
         ]);
-
-        $actualField = new Field([
+        $expectedField = new Field([
             0 => ['x', '', ''],
             1 => ['', '', ''],
             2 => ['', '', '']
         ]);
 
-        $this->assertEquals($actualField, $this->ticTacToe->playerTakeMove($player, $expectedField, $coordinates));
+        $actualField = $this->ticTacToe->playerTakeMove($player, $startField, $coordinates);
+
+        $this->assertEquals($expectedField, $actualField);
     }
 
     public function testSecondPlayerTakeFirstMove(): void
@@ -131,5 +132,20 @@ class TicTacToeTest extends TestCase
         ]);
 
         $this->assertEquals($expectedField, $this->ticTacToe->playerTakeMove($player, $actualField, $coordinates));
+    }
+
+    public function testPlayerTakeMoveToAlreadyTakenCoordinates(): void
+    {
+        $player = new Player('o');
+        $coordinates = new Coordinates(0, 0);
+
+        $actualField = new Field([
+            0 => ['x', '', ''],
+            1 => ['', '', ''],
+            2 => ['', '', '']
+        ]);
+
+        $this->expectException(PositionAlreadyTokenException::class);
+        $this->ticTacToe->playerTakeMove($player, $actualField, $coordinates);
     }
 }
