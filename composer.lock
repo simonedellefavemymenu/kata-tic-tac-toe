@@ -854,12 +854,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "9197d2f3f675e7ef0d6b4aa57a822cb91d49a506"
+                "reference": "dbbca19e1e52065699ba95820123cc9836a2b85a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/9197d2f3f675e7ef0d6b4aa57a822cb91d49a506",
-                "reference": "9197d2f3f675e7ef0d6b4aa57a822cb91d49a506",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/dbbca19e1e52065699ba95820123cc9836a2b85a",
+                "reference": "dbbca19e1e52065699ba95820123cc9836a2b85a",
                 "shasum": ""
             },
             "require": {
@@ -940,7 +940,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-07-02T06:45:22+00:00"
+            "time": "2022-07-14T05:21:57+00:00"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",
@@ -1787,5 +1787,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.2.0"
 }

@@ -4,7 +4,7 @@ namespace Kata;
 
 use Exception;
 
-class PositionAlreadyTokenException extends Exception
+class PositionAlreadyTakenException extends Exception
 {
     public function __construct()
     {

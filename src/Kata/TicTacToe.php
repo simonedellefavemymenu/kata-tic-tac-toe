@@ -21,11 +21,11 @@ class TicTacToe
     }
 
     /**
-     * @throws PositionAlreadyTokenException
+     * @throws PositionAlreadyTakenException
      */
     public function playerTakeMove(Player $player, Coordinates $coordinates): Field
     {
-        $this->field->putIconIntoField($player->getIcon(), $coordinates->getRow(), $coordinates->getColumn());
+        $this->field->putIconIntoField($player->getIcon(), $coordinates);
         return $this->field;
     }
 }

@@ -19,18 +19,18 @@ class Field
     }
 
     /**
-     * @throws PositionAlreadyTokenException
+     * @throws PositionAlreadyTakenException
      */
-    public function putIconIntoField(string $icon, int $row, int $column): void
+    public function putIconIntoField(string $icon, Coordinates $coordinates): void
     {
-        if ($this->positionAlreadyToken($row, $column)) {
-            throw new PositionAlreadyTokenException();
+        if ($this->positionAlreadyTaken($coordinates->getRow(), $coordinates->getColumn())) {
+            throw new PositionAlreadyTakenException();
         }
 
-        $this->field[$row][$column] = $icon;
+        $this->field[$coordinates->getRow()][$coordinates->getColumn()] = $icon;
     }
 
-    private function positionAlreadyToken(int $row, int $column): bool
+    private function positionAlreadyTaken(int $row, int $column): bool
     {
         return $this->field[$row][$column] !== '';
     }

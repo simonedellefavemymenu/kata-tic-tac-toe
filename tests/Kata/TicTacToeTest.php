@@ -7,7 +7,7 @@ use PHPUnit\Framework\TestCase;
 class TicTacToeTest extends TestCase
 {
     /**
-     * @throws PositionAlreadyTokenException
+     * @throws PositionAlreadyTakenException
      */
     public function testFirstPlayerTakeFirstMove(): void
     {
@@ -26,7 +26,7 @@ class TicTacToeTest extends TestCase
     }
 
     /**
-     * @throws PositionAlreadyTokenException
+     * @throws PositionAlreadyTakenException
      */
     public function testSecondPlayerTakeFirstMove(): void
     {
@@ -47,7 +47,7 @@ class TicTacToeTest extends TestCase
     }
 
     /**
-     * @throws PositionAlreadyTokenException
+     * @throws PositionAlreadyTakenException
      */
     public function testFirstPlayerTakeSecondMove(): void
     {
@@ -68,7 +68,7 @@ class TicTacToeTest extends TestCase
     }
 
     /**
-     * @throws PositionAlreadyTokenException
+     * @throws PositionAlreadyTakenException
      */
     public function testSecondPlayerTakeSecondMove(): void
     {
@@ -89,7 +89,7 @@ class TicTacToeTest extends TestCase
     }
 
     /**
-     * @throws PositionAlreadyTokenException
+     * @throws PositionAlreadyTakenException
      */
     public function testFirstPlayerTakeThirdMove(): void
     {
@@ -110,7 +110,7 @@ class TicTacToeTest extends TestCase
     }
 
     /**
-     * @throws PositionAlreadyTokenException
+     * @throws PositionAlreadyTakenException
      */
     public function testSecondPlayerTakeThirdMove(): void
     {
@@ -140,7 +140,7 @@ class TicTacToeTest extends TestCase
             2 => ['', '', '']
         ]));
 
-        $this->expectException(PositionAlreadyTokenException::class);
+        $this->expectException(PositionAlreadyTakenException::class);
         $ticTacToe->playerTakeMove($player, $coordinates);
     }
 }
