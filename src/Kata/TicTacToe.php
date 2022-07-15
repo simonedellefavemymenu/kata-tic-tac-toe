@@ -23,9 +23,9 @@ class TicTacToe
     /**
      * @throws PositionAlreadyTakenException
      */
-    public function playerTakeMove(Player $player, Coordinates $coordinates): Field
+    public function playerTakeMove(Icon $icon, Coordinates $coordinates): Field
     {
-        $this->field->putIconIntoField($player->getIcon(), $coordinates);
+        $this->field->putIconIntoField($icon, $coordinates);
         return $this->field;
     }
 }

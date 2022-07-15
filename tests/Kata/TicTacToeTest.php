@@ -11,7 +11,7 @@ class TicTacToeTest extends TestCase
      */
     public function testFirstPlayerTakeFirstMove(): void
     {
-        $player = new Player('x');
+        $player = new Icon('x');
         $coordinates = new Coordinates(0, 0);
         $expectedField = new Field([
             0 => ['x', '', ''],
@@ -30,7 +30,7 @@ class TicTacToeTest extends TestCase
      */
     public function testSecondPlayerTakeFirstMove(): void
     {
-        $player = new Player('o');
+        $player = new Icon('o');
         $coordinates = new Coordinates(0, 1);
         $expectedField = new Field([
             0 => ['x', 'o', ''],
@@ -51,7 +51,7 @@ class TicTacToeTest extends TestCase
      */
     public function testFirstPlayerTakeSecondMove(): void
     {
-        $player = new Player('x');
+        $player = new Icon('x');
         $coordinates = new Coordinates(0, 2);
         $expectedField = new Field([
             0 => ['x', 'o', 'x'],
@@ -72,7 +72,7 @@ class TicTacToeTest extends TestCase
      */
     public function testSecondPlayerTakeSecondMove(): void
     {
-        $player = new Player('o');
+        $player = new Icon('o');
         $coordinates = new Coordinates(1, 0);
         $expectedField = new Field([
             0 => ['x', 'o', 'x'],
@@ -93,7 +93,7 @@ class TicTacToeTest extends TestCase
      */
     public function testFirstPlayerTakeThirdMove(): void
     {
-        $player = new Player('x');
+        $player = new Icon('x');
         $coordinates = new Coordinates(2, 2);
         $expectedField = new Field([
             0 => ['x', 'o', 'x'],
@@ -114,7 +114,7 @@ class TicTacToeTest extends TestCase
      */
     public function testSecondPlayerTakeThirdMove(): void
     {
-        $player = new Player('o');
+        $player = new Icon('o');
         $coordinates = new Coordinates(2, 0);
         $expectedField = new Field([
             0 => ['x', 'o', 'x'],
@@ -132,7 +132,7 @@ class TicTacToeTest extends TestCase
 
     public function testPlayerTakeMoveToAlreadyTakenCoordinates(): void
     {
-        $player = new Player('o');
+        $player = new Icon('o');
         $coordinates = new Coordinates(0, 0);
         $ticTacToe = new TicTacToe(new Field([
             0 => ['x', '', ''],

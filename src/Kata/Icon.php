@@ -2,17 +2,17 @@
 
 namespace Kata;
 
-class Player
+class Icon
 {
-    private string $icon;
+    private string $value;
 
-    public function __construct(string $icon)
+    public function __construct(string $value)
     {
-        $this->icon = $icon;
+        $this->value = $value;
     }
 
-    public function getIcon(): string
+    public function getValue(): string
     {
-        return $this->icon;
+        return $this->value;
     }
 }
