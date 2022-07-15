@@ -149,4 +149,22 @@ class TicTacToeTest extends TestCase
         $this->expectException(\Exception::class);
         $icon = new Icon('p');
     }
+
+    public function testAIconIsNotAllowed(): void
+    {
+        $this->expectException(\Exception::class);
+        $icon = new Icon('a');
+    }
+
+    public function test1NumberIconIsNotAllowed(): void
+    {
+        $this->expectException(\Exception::class);
+        $icon = new Icon('1');
+    }
+
+    public function testSpecialCharacterIconIsNotAllowed(): void
+    {
+        $this->expectException(\Exception::class);
+        $icon = new Icon('£');
+    }
 }
