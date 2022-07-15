@@ -2,7 +2,6 @@
 
 namespace Kata;
 
-use Exception;
 use PHPUnit\Framework\TestCase;
 
 class TicTacToeTest extends TestCase
