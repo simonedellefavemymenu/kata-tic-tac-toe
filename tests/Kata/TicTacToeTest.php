@@ -7,6 +7,9 @@ use PHPUnit\Framework\TestCase;
 
 class TicTacToeTest extends TestCase
 {
+    /**
+     * @throws PositionAlreadyTokenException
+     */
     public function testFirstPlayerTakeFirstMove(): void
     {
         $player = new Player('x');
@@ -23,6 +26,9 @@ class TicTacToeTest extends TestCase
         $this->assertEquals($expectedField, $actualField);
     }
 
+    /**
+     * @throws PositionAlreadyTokenException
+     */
     public function testSecondPlayerTakeFirstMove(): void
     {
         $player = new Player('o');
@@ -41,6 +47,9 @@ class TicTacToeTest extends TestCase
         $this->assertEquals($expectedField, $ticTacToe->playerTakeMove($player, $coordinates));
     }
 
+    /**
+     * @throws PositionAlreadyTokenException
+     */
     public function testFirstPlayerTakeSecondMove(): void
     {
         $player = new Player('x');
@@ -59,6 +68,9 @@ class TicTacToeTest extends TestCase
         $this->assertEquals($expectedField, $ticTacToe->playerTakeMove($player, $coordinates));
     }
 
+    /**
+     * @throws PositionAlreadyTokenException
+     */
     public function testSecondPlayerTakeSecondMove(): void
     {
         $player = new Player('o');
@@ -77,6 +89,9 @@ class TicTacToeTest extends TestCase
         $this->assertEquals($expectedField, $ticTacToe->playerTakeMove($player, $coordinates));
     }
 
+    /**
+     * @throws PositionAlreadyTokenException
+     */
     public function testFirstPlayerTakeThirdMove(): void
     {
         $player = new Player('x');
@@ -95,6 +110,9 @@ class TicTacToeTest extends TestCase
         $this->assertEquals($expectedField, $ticTacToe->playerTakeMove($player, $coordinates));
     }
 
+    /**
+     * @throws PositionAlreadyTokenException
+     */
     public function testSecondPlayerTakeThirdMove(): void
     {
         $player = new Player('o');
