@@ -15,6 +15,10 @@ class TicTacToeTest extends TestCase
 
     public function testFirstPlayerTakeFirstMove(): void
     {
+        $player = new Player('x');
+        $round = new Round(1);
+        $coordinates = new Coordinates(0, 0);
+
         $expectedField = new Field([
             0 => ['', '', ''],
             1 => ['', '', ''],
@@ -27,14 +31,15 @@ class TicTacToeTest extends TestCase
             2 => ['', '', '']
         ]);
 
-        $player = new Player('x');
-        $round = 1;
-
-        $this->assertEquals($actualField, $this->ticTacToe->playerTakeMove($player, $expectedField, $round));
+        $this->assertEquals($actualField, $this->ticTacToe->playerTakeMove($player, $expectedField, $round, $coordinates));
     }
 
     public function testSecondPlayerTakeFirstMove(): void
     {
+        $player = new Player('o');
+        $round = new Round(1);
+        $coordinates = new Coordinates(0, 1);
+
         $actualField = new Field([
             0 => ['x', '', ''],
             1 => ['', '', ''],
@@ -47,14 +52,15 @@ class TicTacToeTest extends TestCase
             2 => ['', '', '']
         ]);
 
-        $player = new Player('o');
-        $round = 1;
-
-        $this->assertEquals($expectedField, $this->ticTacToe->playerTakeMove($player, $actualField, $round));
+        $this->assertEquals($expectedField, $this->ticTacToe->playerTakeMove($player, $actualField, $round, $coordinates));
     }
 
     public function testFirstPlayerTakeSecondMove(): void
     {
+        $player = new Player('x');
+        $round = new Round(2);
+        $coordinates = new Coordinates(0, 2);
+
         $actualField = new Field([
             0 => ['x', 'o', ''],
             1 => ['', '', ''],
@@ -67,14 +73,15 @@ class TicTacToeTest extends TestCase
             2 => ['', '', '']
         ]);
 
-        $player = new Player('x');
-        $round = 2;
-
-        $this->assertEquals($expectedField, $this->ticTacToe->playerTakeMove($player, $actualField, $round));
+        $this->assertEquals($expectedField, $this->ticTacToe->playerTakeMove($player, $actualField, $round, $coordinates));
     }
 
     public function testSecondPlayerTakeSecondMove(): void
     {
+        $player = new Player('o');
+        $round = new Round(2);
+        $coordinates = new Coordinates(1, 0);
+
         $actualField = new Field([
             0 => ['x', 'o', 'x'],
             1 => ['', '', ''],
@@ -87,9 +94,6 @@ class TicTacToeTest extends TestCase
             2 => ['', '', '']
         ]);
 
-        $player = new Player('o');
-        $round = 2;
-
-        $this->assertEquals($expectedField, $this->ticTacToe->playerTakeMove($player, $actualField, $round));
+        $this->assertEquals($expectedField, $this->ticTacToe->playerTakeMove($player, $actualField, $round, $coordinates));
     }
 }
